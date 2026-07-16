@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #f2f0ff;
+  --color-brand-100: #e4e0ff;
+  --color-brand-200: #c9c2ff;
+  --color-brand-300: #a89bff;
+  --color-brand-400: #8a75ff;
+  --color-brand-500: #6d4aff;
+  --color-brand-600: #5a2ef5;
+  --color-brand-700: #4a21d4;
+  --color-brand-800: #3b1ba8;
+  --color-brand-900: #2e177f;
+  --color-surface-950: #07060d;
+  --color-surface-900: #0c0a16;
+  --color-surface-800: #131022;
+  --color-surface-700: #1c1832;
+  --color-surface-600: #2a2547;
+  --font-display: "Sora", "Segoe UI", sans-serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-surface-950);
+  color: #e8e6f4;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgba(109, 74, 255, 0.4);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface-900);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-600);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-600);
+}
+
+.text-gradient {
+  background: linear-gradient(120deg, #8a75ff, #6d4aff 45%, #b74aff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.glow {
+  box-shadow: 0 0 40px -8px rgba(109, 74, 255, 0.55);
+}
+
+.glass {
+  background: rgba(19, 16, 34, 0.72);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(138, 117, 255, 0.12);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+.animate-pulse-glow {
+  animation: pulse-glow 3.5s ease-in-out infinite;
+}
+
+@keyframes grid-move {
+  from { background-position: 0 0; }
+  to { background-position: 48px 48px; }
+}
+.bg-grid {
+  background-image:
+    linear-gradient(rgba(138, 117, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(138, 117, 255, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  animation: grid-move 8s linear infinite;
+}

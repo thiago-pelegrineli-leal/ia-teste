@@ -1,6 +1,0 @@
-{
-    "devin.acp.enabledAgents": {
-        "devin-cloud": false,
-        "devin-cli": true
-    }
-}
