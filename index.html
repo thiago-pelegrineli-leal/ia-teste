@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>!P | PRODUCTIONS - Discord Bots</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <!-- Loading Screen -->
+        <div id="loading-screen" class="loading-screen">
+            <div class="logo-animation">
+                <div class="logo">!P</div>
+                <div class="loading-bar"></div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">!P</div>
+                <div class="nav-links">
+                    <a href="#home" class="nav-link">Início</a>
+                    <a href="#bots" class="nav-link">Bots</a>
+                    <a href="#plans" class="nav-link">Planos</a>
+                    <a href="#about" class="nav-link">Sobre</a>
+                </div>
+                <div class="nav-auth">
+                    <button id="login-btn" class="btn btn-primary">Entrar</button>
+                    <button id="admin-btn" class="btn btn-secondary hidden">Painel Admin</button>
+                    <button id="logout-btn" class="btn btn-outline hidden">Sair</button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="gradient-text">!P</span> | PRODUCTIONS
+                    </h1>
+                    <p class="hero-subtitle">Bots de Discord Profissionais para seu Servidor</p>
+                    <p class="hero-description">
+                        Transforme seu servidor Discord com nossos bots avançados. 
+                        Moderação, música, economia e muito mais.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary btn-large">Começar Agora</button>
+                        <button class="btn btn-secondary btn-large">Ver Bots</button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-bots">
+                        <div class="bot-card bot-1">
+                            <div class="bot-icon">🤖</div>
+                            <div class="bot-name">ModBot</div>
+                        </div>
+                        <div class="bot-card bot-2">
+                            <div class="bot-icon">🎵</div>
+                            <div class="bot-name">MusicBot</div>
+                        </div>
+                        <div class="bot-card bot-3">
+                            <div class="bot-icon">💰</div>
+                            <div class="bot-name">EcoBot</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-arrow"></div>
+            </div>
+        </section>
+
+        <!-- Bots Section -->
+        <section id="bots" class="section">
+            <div class="container">
+                <h2 class="section-title">Nossos Bots</h2>
+                <p class="section-subtitle">Bots poderosos para todas as necessidades</p>
+                <div class="bots-grid" id="bots-grid">
+                    <!-- Bots will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Plans Section -->
+        <section id="plans" class="section section-dark">
+            <div class="container">
+                <h2 class="section-title">Nossos Planos</h2>
+                <p class="section-subtitle">Escolha o plano ideal para você</p>
+                <div class="plans-grid" id="plans-grid">
+                    <!-- Plans will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">Sobre Nós</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            A !P | PRODUCTIONS é especializada em criar bots de Discord de alta qualidade. 
+                            Nossa missão é fornecer ferramentas poderosas e fáceis de usar para melhorar 
+                            a experiência dos servidores Discord.
+                        </p>
+                        <div class="stats">
+                            <div class="stat">
+                                <div class="stat-number" data-count="1000">0</div>
+                                <div class="stat-label">Servidores</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number" data-count="50000">0</div>
+                                <div class="stat-label">Usuários</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number" data-count="99">0</div>
+                                <div class="stat-label">% Uptime</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-visual">
+                        <div class="logo-large">!P</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">!P | PRODUCTIONS</div>
+                    <div class="footer-links">
+                        <a href="#terms" class="footer-link">Termos de Uso</a>
+                        <a href="#privacy" class="footer-link">Privacidade</a>
+                        <a href="#contact" class="footer-link">Contato</a>
+                    </div>
+                    <div class="footer-copyright">
+                        © 2024 !P | PRODUCTIONS. Todos os direitos reservados.
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Admin Panel -->
+        <div id="admin-panel" class="admin-panel hidden">
+            <div class="admin-sidebar">
+                <div class="admin-logo">!P</div>
+                <nav class="admin-nav">
+                    <button class="admin-nav-item active" data-section="dashboard">
+                        <span>📊</span> Dashboard
+                    </button>
+                    <button class="admin-nav-item" data-section="bots">
+                        <span>🤖</span> Bots
+                    </button>
+                    <button class="admin-nav-item" data-section="plans">
+                        <span>💳</span> Planos
+                    </button>
+                    <button class="admin-nav-item" data-section="terms">
+                        <span>📄</span> Termos
+                    </button>
+                    <button class="admin-nav-item" data-section="users">
+                        <span>👥</span> Usuários
+                    </button>
+                </nav>
+            </div>
+            <div class="admin-content">
+                <div class="admin-header">
+                    <h2 id="admin-title">Dashboard</h2>
+                    <button id="close-admin" class="btn btn-outline">Fechar</button>
+                </div>
+                
+                <!-- Dashboard Section -->
+                <div id="admin-dashboard" class="admin-section active">
+                    <div class="dashboard-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">🤖</div>
+                            <div class="stat-info">
+                                <div class="stat-label">Bots Ativos</div>
+                                <div class="stat-value" id="stat-bots">0</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">👥</div>
+                            <div class="stat-info">
+                                <div class="stat-label">Usuários</div>
+                                <div class="stat-value" id="stat-users">0</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">💳</div>
+                            <div class="stat-info">
+                                <div class="stat-label">Planos</div>
+                                <div class="stat-value" id="stat-plans">0</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">📈</div>
+                            <div class="stat-info">
+                                <div class="stat-label">Servidores</div>
+                                <div class="stat-value" id="stat-servers">0</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bots Management Section -->
+                <div id="admin-bots" class="admin-section">
+                    <div class="section-header">
+                        <h3>Gerenciar Bots</h3>
+                        <button class="btn btn-primary" onclick="openBotModal()">+ Adicionar Bot</button>
+                    </div>
+                    <div class="data-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Status</th>
+                                    <th>Servidores</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bots-table">
+                                <!-- Bots will be loaded dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Plans Management Section -->
+                <div id="admin-plans" class="admin-section">
+                    <div class="section-header">
+                        <h3>Gerenciar Planos</h3>
+                        <button class="btn btn-primary" onclick="openPlanModal()">+ Adicionar Plano</button>
+                    </div>
+                    <div class="data-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Preço</th>
+                                    <th>Recursos</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="plans-table">
+                                <!-- Plans will be loaded dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Terms Management Section -->
+                <div id="admin-terms" class="admin-section">
+                    <div class="section-header">
+                        <h3>Gerenciar Termos</h3>
+                        <button class="btn btn-primary" onclick="saveTerms()">Salvar</button>
+                    </div>
+                    <div class="terms-editor">
+                        <textarea id="terms-content" placeholder="Digite os termos de uso aqui..."></textarea>
+                    </div>
+                </div>
+
+                <!-- Users Management Section -->
+                <div id="admin-users" class="admin-section">
+                    <div class="section-header">
+                        <h3>Gerenciar Usuários</h3>
+                    </div>
+                    <div class="data-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Email</th>
+                                    <th>Plano</th>
+                                    <th>Data Registro</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody id="users-table">
+                                <!-- Users will be loaded dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modals -->
+        <div id="modal-overlay" class="modal-overlay hidden">
+            <div id="bot-modal" class="modal hidden">
+                <div class="modal-header">
+                    <h3>Adicionar Bot</h3>
+                    <button class="modal-close" onclick="closeModal()">×</button>
+                </div>
+                <form id="bot-form" class="modal-body">
+                    <div class="form-group">
+                        <label>Nome do Bot</label>
+                        <input type="text" id="bot-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Descrição</label>
+                        <textarea id="bot-description" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Ícone (Emoji)</label>
+                        <input type="text" id="bot-icon" placeholder="🤖">
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select id="bot-status">
+                            <option value="active">Ativo</option>
+                            <option value="inactive">Inativo</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </form>
+            </div>
+
+            <div id="plan-modal" class="modal hidden">
+                <div class="modal-header">
+                    <h3>Adicionar Plano</h3>
+                    <button class="modal-close" onclick="closeModal()">×</button>
+                </div>
+                <form id="plan-form" class="modal-body">
+                    <div class="form-group">
+                        <label>Nome do Plano</label>
+                        <input type="text" id="plan-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Preço (R$)</label>
+                        <input type="number" id="plan-price" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Recursos (um por linha)</label>
+                        <textarea id="plan-features" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Popular?</label>
+                        <input type="checkbox" id="plan-popular">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Salvar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js';
+        import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js';
+        import { getDatabase, ref, set, get, update, remove, onValue } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCRzlIDkKJhHYCE_Vm9FUqr2dl0qjf08uI",
+            authDomain: "smart-applications-6ced1.firebaseapp.com",
+            databaseURL: "https://smart-applications-6ced1-default-rtdb.firebaseio.com",
+            projectId: "smart-applications-6ced1",
+            storageBucket: "smart-applications-6ced1.firebasestorage.app",
+            messagingSenderId: "506238337127",
+            appId: "1:506238337127:web:8e5f0af86ad743ad2294c2",
+            measurementId: "G-KDMR6TZQD3"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth(app);
+        const provider = new GoogleAuthProvider();
+        const db = getDatabase(app);
+
+        // Make Firebase available globally
+        window.firebaseAuth = auth;
+        window.firebaseProvider = provider;
+        window.firebaseDb = db;
+        window.firebaseRef = ref;
+        window.firebaseSet = set;
+        window.firebaseGet = get;
+        window.firebaseUpdate = update;
+        window.firebaseRemove = remove;
+        window.firebaseOnValue = onValue;
+        window.firebaseSignInWithPopup = signInWithPopup;
+        window.firebaseSignOut = signOut;
+        window.firebaseOnAuthStateChanged = onAuthStateChanged;
+    </script>
+    <script src="app.js"></script>
+</body>
+</html>
